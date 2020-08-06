@@ -1,0 +1,42 @@
+ <!--
+    
+    Author: Hunter Monaghan
+    Date:  4-19-20
+
+    Filename: IPaddress_2.html
+    
+   -->
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    button{
+        border: 1px solid black;
+    }
+    input{
+        border: 1px solid black;
+    }
+</style>
+    </head>
+    <body>
+        <h1>Expression Input Validation </h1>
+
+        Please enter an IP address: <input id="IP" type="text" value="207.0.0.1">
+        <br>
+
+        <button type="button" onclick="IPCheck();">READY</button>
+
+    </body>
+   
+        <script>
+            function IPCheck(){
+            var inputElement = document.getElementById("IP");
+            var theNumber = inputElement.value;
+            var regExp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+            
+            if(regExp.test(theNumber))
+                alert("It Worked! Nice Job!");
+            else
+                alert("Try Again!")
+            }
+        </script>
